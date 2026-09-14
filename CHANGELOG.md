@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.5.0 - 2026-09-14
+
 ### Added
 
 - Manifest v2 JSON Schema for Vela apps.
