@@ -1,0 +1,25 @@
+{
+  "name": "@vela/contracts",
+  "version": "0.5.0",
+  "files": [
+    "manifest-v2.schema.json",
+    "README.md"
+  ],
+  "exports": {
+    "./manifest-v2.schema.json": "./manifest-v2.schema.json"
+  },
+  "license": "MIT",
+  "description": "Manifest v2 JSON Schema for Vela apps.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhd3197/vela-contracts.git"
+  },
+  "homepage": "https://github.com/jhd3197/vela-contracts#readme",
+  "bugs": {
+    "url": "https://github.com/jhd3197/vela-contracts/issues"
+  },
+  "funding": "https://github.com/sponsors/jhd3197",
+  "publishConfig": {
+    "access": "public"
+  }
+}
