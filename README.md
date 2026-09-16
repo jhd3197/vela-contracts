@@ -1,7 +1,8 @@
 # Vela contracts
 
 Manifest v2 JSON Schema. Package version 0.5.0 supports bridge protocol 1,
-static release data migrations and explicitly granted app actions. Manifest version and SDK version are separate.
+static release data migrations, explicitly granted app actions and desk widget
+declarations. Manifest version and SDK version are separate.
 Validate app manifests with this schema before creating a release artifact.
 The engine additionally validates capabilities, file boundaries and migration
 results. `npm pack` creates a portable contract artifact; no registry publication
