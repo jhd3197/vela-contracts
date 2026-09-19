@@ -4,6 +4,25 @@
 
 ### Added
 
+- **`view.window`: an app can say what shape its window is.** A v2 manifest
+  with an embedded surface may declare `view.window` with `resizable`,
+  `maximizable` and a `defaultSize` of `{width, height}` in CSS pixels. A
+  calculator that only works at one size can now say so, instead of offering a
+  maximize button it cannot honour. Every field is optional and the defaults
+  are today's behaviour, so an existing manifest is unaffected. `defaultSize`
+  is bounded at 240x160 and 20000x20000, which is the range a host's own window
+  geometry accepts, so a declared size cannot be one the desk would refuse.
+  Only an embedded surface may declare it: an app that opens outside the host,
+  or has no view at all, has no window to describe.
+
+- **`topbar.menus`: an app can declare menus for the host's top bar.** Up to
+  four menus, each with a label of at most 24 characters and up to eight items.
+  An item's optional `action` is `return` or `close` — a closed set, so a menu
+  is something the host knows how to perform rather than a name it has to
+  interpret. An item with no action is a label the host draws and does not act
+  on. Declaring `topbar` requires the `topbar` capability, which is the host's
+  check rather than the schema's; the schema bounds the shape and the counts.
+
 - `manifest-v3.schema.json`: a separate manifest version for **managed web
   apps** — existing self-hosted web servers that a host installs, runs as a
   local native service and publishes on their own web address. A v3 manifest
