@@ -19,7 +19,10 @@
   `false`: installing a managed app grants no bridge, storage, action, widget
   or agent access. v1 and v2 manifests are untouched, and a host that does not
   implement `compatibility.managedService` refuses a v3 package rather than
-  ignoring what it cannot honour.
+  ignoring what it cannot honour. That field is a bounded integer rather than
+  a constant, so the refusal comes from the host and names the revision it
+  does implement instead of arriving as a schema error. `service.lifetime` is
+  optional: every field in it has a default.
 - `view.appearance`: an optional hint, one of `light`, `dark` or `auto`
   (default `auto`), for the theme Vela should draw an embedded app's window
   chrome in. `auto` follows the hub theme; `dark` keeps the app's title bar dark

@@ -67,7 +67,10 @@
       ],
       "properties": {
         "managedService": {
-          "const": 1
+          "description": "The managed-service feature revision this package needs. A host that implements a different one refuses the package with an actionable message rather than ignoring declarations it cannot honour, so this is a number to compare rather than a constant.",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 99
         },
         "minimumHost": {
           "type": "string",
@@ -117,7 +120,6 @@
         "command",
         "endpoint",
         "readiness",
-        "lifetime",
         "data"
       ],
       "properties": {
