@@ -4,6 +4,22 @@
 
 ### Added
 
+- `manifest-v3.schema.json`: a separate manifest version for **managed web
+  apps** — existing self-hosted web servers that a host installs, runs as a
+  local native service and publishes on their own web address. A v3 manifest
+  declares its upstream source and licence, per-OS *and* per-architecture
+  release artifacts pinned by SHA-256 and exact size (there is no combined
+  `posix` target), an explicit argument vector with a bounded set of
+  placeholders instead of a shell string, a loopback HTTP endpoint, an HTTP
+  readiness probe, restart and graceful-stop policy, and one relative
+  persistent data directory. `service.trust` accepts only `trusted-native`,
+  which says the executable runs with the host user's own operating-system
+  permissions rather than inside a sandbox. Install, migration and repair hooks
+  are not expressible, and `integration.sdk`/`integration.agent` can only be
+  `false`: installing a managed app grants no bridge, storage, action, widget
+  or agent access. v1 and v2 manifests are untouched, and a host that does not
+  implement `compatibility.managedService` refuses a v3 package rather than
+  ignoring what it cannot honour.
 - `view.appearance`: an optional hint, one of `light`, `dark` or `auto`
   (default `auto`), for the theme Vela should draw an embedded app's window
   chrome in. `auto` follows the hub theme; `dark` keeps the app's title bar dark

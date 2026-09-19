@@ -56,9 +56,13 @@ def main():
             assert metadata['version'] == automation.current_version()
             assert (package / 'LICENSE').is_file()
             if config['repository'] == 'vela-contracts':
-                schema = json.loads((package / 'manifest-v2.schema.json').read_text())
-                Draft202012Validator.check_schema(schema)
-                assert schema['properties']['schemaVersion']['const'] == 2
+                # Every published schema, each still its own version: a package
+                # that shipped only one of them would let a host fall back to
+                # the wrong profile for a manifest it cannot honour.
+                for name, version in (('manifest-v2.schema.json', 2), ('manifest-v3.schema.json', 3)):
+                    schema = json.loads((package / name).read_text())
+                    Draft202012Validator.check_schema(schema)
+                    assert schema['properties']['schemaVersion']['const'] == version
             elif config['repository'] == 'vela-sdk':
                 subprocess.run(['node', '--check', str(package / 'vela.js')], check=True)
                 assert not (package / 'host.js').exists()

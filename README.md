@@ -1,12 +1,28 @@
 # Vela contracts
 
-Manifest v2 JSON Schema. Package version 0.5.0 supports bridge protocol 1,
-static release data migrations, explicitly granted app actions and desk widget
-declarations. Manifest version and SDK version are separate.
-Validate app manifests with this schema before creating a release artifact.
-The engine additionally validates capabilities, file boundaries and migration
-results. `npm pack` creates a portable contract artifact; no registry publication
-is performed by this repository.
+The manifest JSON Schemas Vela apps are validated against. Manifest version and
+SDK version are separate, and each schema version is its own profile:
+
+| Schema | Profile | What it describes |
+| --- | --- | --- |
+| `manifest-v2.schema.json` | SDK app | Bridge protocol 1, static release data migrations, explicitly granted app actions and desk widget declarations. |
+| `manifest-v3.schema.json` | Managed web app | An existing self-hosted web server a host installs, runs as a local native service and publishes on its own web address. |
+
+A managed web app keeps its own interface, accounts and data format. The host
+owns the installation record, the service lifetime, the web gateway and the
+declared recovery operations. A v3 manifest pins one release artifact per
+operating system *and* CPU architecture by SHA-256 and exact size, states that
+its executable runs with trusted native (host-user) permissions rather than
+inside a sandbox, gives an argument vector rather than a shell string, and names
+one relative persistent data directory. It cannot declare install, migration or
+repair hooks, and it cannot ask for the SDK bridge, app storage, actions,
+widgets or agent access.
+
+Validate app manifests with the matching schema before creating a release
+artifact. The engine additionally validates capabilities, file boundaries,
+migration results, artifact digests and path safety. `npm pack` creates a
+portable contract artifact; no registry publication is performed by this
+repository.
 
 ## Downloads
 
