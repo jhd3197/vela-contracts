@@ -63,6 +63,11 @@ def main():
                     schema = json.loads((package / name).read_text())
                     Draft202012Validator.check_schema(schema)
                     assert schema['properties']['schemaVersion']['const'] == version
+                # A companion registration is its own format, not a manifest.
+                schema = json.loads((package / 'companion-v1.schema.json').read_text())
+                Draft202012Validator.check_schema(schema)
+                assert schema['properties']['companion']['const'] == 1
+                assert (package / 'docs' / 'COMPANIONS.md').is_file()
             elif config['repository'] == 'vela-sdk':
                 subprocess.run(['node', '--check', str(package / 'vela.js')], check=True)
                 assert not (package / 'host.js').exists()

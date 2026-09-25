@@ -1,0 +1,9 @@
+{
+  "companion": 1,
+  "id": "prompture-desk",
+  "name": "Prompture Desk",
+  "version": "0.4.0",
+  "endpoint": "http://[::1]:4100",
+  "token": "q2oV1YwJmSgHkq8H1mZtV6z4B0Jf3r9WcXnL7pEaUuA",
+  "pid": 18244
+}

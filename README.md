@@ -7,6 +7,7 @@ SDK version are separate, and each schema version is its own profile:
 | --- | --- | --- |
 | `manifest-v2.schema.json` | SDK app | Bridge protocol 1, static release data migrations, explicitly granted app actions and desk widget declarations. |
 | `manifest-v3.schema.json` | Managed web app | An existing self-hosted web server a host installs, runs as a local native service and publishes on its own web address. |
+| `companion-v1.schema.json` | Companion app | A desktop app already running on the same computer that registers itself so the host can show its widgets and run its actions. Not a package or a manifest. |
 
 A managed web app keeps its own interface, accounts and data format. The host
 owns the installation record, the service lifetime, the web gateway and the
@@ -17,6 +18,12 @@ inside a sandbox, gives an argument vector rather than a shell string, and names
 one relative persistent data directory. It cannot declare install, migration or
 repair hooks, and it cannot ask for the SDK bridge, app storage, actions,
 widgets or agent access.
+
+A companion app keeps its own window, process and installer. It writes a small
+registration file into the host's companions folder and serves three loopback
+HTTP routes: status, widget summaries and actions. The owner connects it once.
+It gets no SDK session, storage, credential or agent access, and it never calls
+the host. [docs/COMPANIONS.md](docs/COMPANIONS.md) is the full protocol.
 
 Validate app manifests with the matching schema before creating a release
 artifact. The engine additionally validates capabilities, file boundaries,

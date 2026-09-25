@@ -4,6 +4,17 @@
 
 ### Added
 
+- **`companion-v1.schema.json`: companion apps.** A desktop app running on the
+  same computer as Vela can register itself by writing
+  `~/.vela/companions/<id>.json`: its name, a PNG icon, a loopback endpoint, a
+  per-start token, up to four desk widgets (the same declarations as v2) and up
+  to eight actions. The host polls the endpoint for widget summaries and calls
+  it to run an action, and only after the owner connects it.
+  [docs/COMPANIONS.md](docs/COMPANIONS.md) describes the file, the three HTTP
+  routes and the security model. The endpoint must be loopback, the icon must be
+  a PNG in the same folder, and an action is a title and an optional
+  confirmation question, never a command.
+
 - **`view.window`: an app can say what shape its window is.** A v2 manifest
   with an embedded surface may declare `view.window` with `resizable`,
   `maximizable` and a `defaultSize` of `{width, height}` in CSS pixels. A

@@ -4,14 +4,17 @@
   "files": [
     "manifest-v2.schema.json",
     "manifest-v3.schema.json",
+    "companion-v1.schema.json",
+    "docs/COMPANIONS.md",
     "README.md"
   ],
   "exports": {
     "./manifest-v2.schema.json": "./manifest-v2.schema.json",
-    "./manifest-v3.schema.json": "./manifest-v3.schema.json"
+    "./manifest-v3.schema.json": "./manifest-v3.schema.json",
+    "./companion-v1.schema.json": "./companion-v1.schema.json"
   },
   "license": "MIT",
-  "description": "Manifest v2 (SDK apps) and v3 (managed web apps) JSON Schemas for Vela.",
+  "description": "Manifest v2 (SDK apps), v3 (managed web apps) and companion registration v1 JSON Schemas for Vela.",
   "repository": {
     "type": "git",
     "url": "https://github.com/jhd3197/vela-contracts.git"
