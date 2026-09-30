@@ -1,0 +1,9 @@
+{
+  "surface": 1,
+  "title": "x",
+  "root": {
+    "type": "badge",
+    "label": "x",
+    "icon": "../../etc/passwd"
+  }
+}

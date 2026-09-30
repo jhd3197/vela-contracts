@@ -1,0 +1,9 @@
+{
+  "surface": 1,
+  "title": "x",
+  "root": {
+    "type": "desktop",
+    "wallpaper": "https://example.com/bg.jpg",
+    "windows": []
+  }
+}

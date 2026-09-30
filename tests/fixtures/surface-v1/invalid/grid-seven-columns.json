@@ -1,0 +1,9 @@
+{
+  "surface": 1,
+  "title": "x",
+  "root": {
+    "type": "grid",
+    "columns": 7,
+    "children": []
+  }
+}

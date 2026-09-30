@@ -8,6 +8,7 @@ SDK version are separate, and each schema version is its own profile:
 | `manifest-v2.schema.json` | SDK app | Bridge protocol 1, static release data migrations, explicitly granted app actions and desk widget declarations. |
 | `manifest-v3.schema.json` | Managed web app | An existing self-hosted web server a host installs, runs as a local native service and publishes on its own web address. |
 | `companion-v1.schema.json` | Companion app | A desktop app already running on the same computer that registers itself so the host can show its widgets and run its actions. Not a package or a manifest. |
+| `surface-v1.schema.json` | Surface | A screen described as data: a tree of host-drawn panels, stats, tables and small desktops that a remote panel, companion or app sends for the host to draw. Not a package or a manifest. |
 
 A managed web app keeps its own interface, accounts and data format. The host
 owns the installation record, the service lifetime, the web gateway and the
@@ -24,6 +25,11 @@ registration file into the host's companions folder and serves three loopback
 HTTP routes: status, widget summaries and actions. The owner connects it once.
 It gets no SDK session, storage, credential or agent access, and it never calls
 the host. [docs/COMPANIONS.md](docs/COMPANIONS.md) is the full protocol.
+
+A surface is JSON, not code. The host draws each node with its own component,
+refuses a type it has no component for, never fetches an address a surface
+names, and asks before running any action a button requests.
+[docs/SURFACES.md](docs/SURFACES.md) covers the limits the host enforces.
 
 Validate app manifests with the matching schema before creating a release
 artifact. The engine additionally validates capabilities, file boundaries,

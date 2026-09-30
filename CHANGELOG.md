@@ -4,6 +4,16 @@
 
 ### Added
 
+- **`surface-v1.schema.json`: screens described as data.** A producer (a
+  remote server panel, a companion, an app) sends a tree of components:
+  `stack`, `grid`, `panel`, a `desktop` of windows with a dock, and the values
+  `text`, `stat`, `progress`, `keyvalue`, `chart`, `table`, `list`, `badge`,
+  `button`, `image`, `divider` and `empty`. The host draws each node with its own
+  component. Text is plain, images are inline PNG, JPEG or WebP only,
+  wallpapers are named presets, and a button names a declared action the host
+  runs only after its own checks. [docs/SURFACES.md](docs/SURFACES.md)
+  describes the limits the host enforces.
+
 - **`companion-v1.schema.json`: companion apps.** A desktop app running on the
   same computer as Vela can register itself by writing
   `~/.vela/companions/<id>.json`: its name, a PNG icon, a loopback endpoint, a
