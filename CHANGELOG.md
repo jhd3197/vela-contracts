@@ -4,6 +4,15 @@
 
 ### Added
 
+- **`connection.provider: "http"`: one public HTTPS API, with a secret.** A v2
+  manifest can declare `baseUrl` (https, DNS name, no path), the `request`
+  operation, allowed `methods` (default GET), up to eight static `headers`, the
+  response headers to `exposeHeaders` to the app, and a `secret` of `{label,
+  description, placeholder, header, prefix, required}`. The owner saves the
+  secret in the host. The host adds it to outgoing requests and never returns
+  it to the app. The existing `ollama` shape is unchanged, and `connection` is
+  now a `oneOf` between the two.
+
 - **`companion-v1.schema.json`: companion apps.** A desktop app running on the
   same computer as Vela can register itself by writing
   `~/.vela/companions/<id>.json`: its name, a PNG icon, a loopback endpoint, a
