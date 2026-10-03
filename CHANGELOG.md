@@ -4,6 +4,15 @@
 
 ### Added
 
+- **`connection.selfHosted`: the owner supplies the address.** An http
+  connection can declare `selfHosted: true`. `baseUrl` stays required as the
+  placeholder/default, and the owner sets the real address in the host at
+  setup: a public https DNS URL, or an http/https loopback or LAN address. The
+  host validates the address before it is used and binds the saved secret to
+  that exact origin, so changing the address invalidates the secret and it is
+  saved again for the new one. Without `selfHosted` nothing changes: the
+  address is fixed by the manifest as before.
+
 - **`connection.provider: "http"`: one public HTTPS API, with a secret.** A v2
   manifest can declare `baseUrl` (https, DNS name, no path), the `request`
   operation, allowed `methods` (default GET), up to eight static `headers`, the
