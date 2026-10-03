@@ -1,0 +1,25 @@
+{
+  "surface": 1,
+  "title": "Nested",
+  "root": {
+    "type": "stack",
+    "direction": "row",
+    "gap": "s",
+    "children": [
+      {
+        "type": "panel",
+        "children": [
+          {
+            "type": "stack",
+            "children": [
+              {
+                "type": "text",
+                "value": "deep"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

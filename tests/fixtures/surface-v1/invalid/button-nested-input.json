@@ -1,0 +1,14 @@
+{
+  "surface": 1,
+  "title": "x",
+  "root": {
+    "type": "button",
+    "label": "Go",
+    "action": "go",
+    "input": {
+      "target": {
+        "id": 1
+      }
+    }
+  }
+}

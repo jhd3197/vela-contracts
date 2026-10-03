@@ -1,0 +1,20 @@
+{
+  "surface": 1,
+  "title": "x",
+  "root": {
+    "type": "table",
+    "columns": [
+      {
+        "key": "a",
+        "label": "A"
+      }
+    ],
+    "rows": [
+      {
+        "a": {
+          "nested": true
+        }
+      }
+    ]
+  }
+}

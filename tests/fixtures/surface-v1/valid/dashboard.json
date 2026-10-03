@@ -1,0 +1,49 @@
+{
+  "surface": 1,
+  "title": "Overview",
+  "root": {
+    "type": "stack",
+    "children": [
+      {
+        "type": "text",
+        "value": "All systems normal",
+        "style": "title",
+        "tone": "good"
+      },
+      {
+        "type": "grid",
+        "columns": 3,
+        "children": [
+          {
+            "type": "stat",
+            "label": "CPU",
+            "value": 23,
+            "format": "percent",
+            "delta": "-4",
+            "tone": "good"
+          },
+          {
+            "type": "progress",
+            "label": "Disk",
+            "value": 61
+          },
+          {
+            "type": "panel",
+            "title": "Status",
+            "span": 1,
+            "children": [
+              {
+                "type": "badge",
+                "label": "online",
+                "tone": "good"
+              },
+              {
+                "type": "divider"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

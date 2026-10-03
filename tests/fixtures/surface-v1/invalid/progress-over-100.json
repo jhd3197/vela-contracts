@@ -1,0 +1,8 @@
+{
+  "surface": 1,
+  "title": "x",
+  "root": {
+    "type": "progress",
+    "value": 140
+  }
+}
