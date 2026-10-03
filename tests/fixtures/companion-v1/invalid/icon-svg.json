@@ -1,0 +1,38 @@
+{
+  "companion": 1,
+  "id": "prompture-desk",
+  "name": "Prompture Desk",
+  "description": "AI usage and coding-agent automations.",
+  "version": "0.4.0",
+  "color": "#8b7ff6",
+  "icon": "prompture-desk.svg",
+  "endpoint": "http://127.0.0.1:53211",
+  "token": "q2oV1YwJmSgHkq8H1mZtV6z4B0Jf3r9WcXnL7pEaUuA",
+  "pid": 18244,
+  "executable": "C:\\Program Files\\Prompture Desk\\prompture-desk.exe",
+  "widgets": [
+    {
+      "id": "today",
+      "name": "Today",
+      "layout": "stat",
+      "size": "s"
+    },
+    {
+      "id": "automation",
+      "name": "Automation",
+      "layout": "actions",
+      "size": "m"
+    }
+  ],
+  "actions": [
+    {
+      "id": "pause",
+      "title": "Pause automation"
+    },
+    {
+      "id": "stop",
+      "title": "Stop automation",
+      "confirm": "Stop the running automation?"
+    }
+  ]
+}

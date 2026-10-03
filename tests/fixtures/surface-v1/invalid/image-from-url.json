@@ -1,0 +1,9 @@
+{
+  "surface": 1,
+  "title": "x",
+  "root": {
+    "type": "image",
+    "src": "https://example.com/a.png",
+    "alt": "x"
+  }
+}

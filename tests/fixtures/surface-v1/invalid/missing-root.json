@@ -1,0 +1,21 @@
+{
+  "surface": 1,
+  "id": "server-web-01",
+  "title": "web-01",
+  "subtitle": "Ubuntu 24.04 · x86_64",
+  "icon": "server",
+  "lang": "en",
+  "generatedAt": "2026-09-29T12:00:00Z",
+  "expiresAt": "2026-09-29T12:01:00Z",
+  "refresh": {
+    "every": 4
+  },
+  "actions": [
+    {
+      "id": "restart-service",
+      "title": "Restart service",
+      "confirm": "Restart this service?",
+      "danger": true
+    }
+  ]
+}

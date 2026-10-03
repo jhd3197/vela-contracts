@@ -56,9 +56,23 @@ def main():
             assert metadata['version'] == automation.current_version()
             assert (package / 'LICENSE').is_file()
             if config['repository'] == 'vela-contracts':
-                schema = json.loads((package / 'manifest-v2.schema.json').read_text())
+                # Every published schema, each still its own version: a package
+                # that shipped only one of them would let a host fall back to
+                # the wrong profile for a manifest it cannot honour.
+                for name, version in (('manifest-v2.schema.json', 2), ('manifest-v3.schema.json', 3)):
+                    schema = json.loads((package / name).read_text())
+                    Draft202012Validator.check_schema(schema)
+                    assert schema['properties']['schemaVersion']['const'] == version
+                # A companion registration is its own format, not a manifest.
+                schema = json.loads((package / 'companion-v1.schema.json').read_text())
                 Draft202012Validator.check_schema(schema)
-                assert schema['properties']['schemaVersion']['const'] == 2
+                assert schema['properties']['companion']['const'] == 1
+                assert (package / 'docs' / 'COMPANIONS.md').is_file()
+                # A surface is data a host draws, not a manifest either.
+                schema = json.loads((package / 'surface-v1.schema.json').read_text())
+                Draft202012Validator.check_schema(schema)
+                assert schema['properties']['surface']['const'] == 1
+                assert (package / 'docs' / 'SURFACES.md').is_file()
             elif config['repository'] == 'vela-sdk':
                 subprocess.run(['node', '--check', str(package / 'vela.js')], check=True)
                 assert not (package / 'host.js').exists()

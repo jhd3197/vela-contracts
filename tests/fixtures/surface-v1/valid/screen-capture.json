@@ -1,0 +1,11 @@
+{
+  "surface": 1,
+  "title": "Screen",
+  "root": {
+    "type": "image",
+    "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==",
+    "alt": "Live screen of web-01",
+    "width": 1,
+    "height": 1
+  }
+}

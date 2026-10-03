@@ -1,0 +1,94 @@
+{
+  "surface": 1,
+  "title": "x",
+  "root": {
+    "type": "desktop",
+    "windows": [
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      },
+      {
+        "type": "window",
+        "title": "w",
+        "children": []
+      }
+    ]
+  }
+}

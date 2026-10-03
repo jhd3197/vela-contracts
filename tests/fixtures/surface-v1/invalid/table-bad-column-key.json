@@ -1,0 +1,14 @@
+{
+  "surface": 1,
+  "title": "x",
+  "root": {
+    "type": "table",
+    "columns": [
+      {
+        "key": "__proto__",
+        "label": "A"
+      }
+    ],
+    "rows": []
+  }
+}

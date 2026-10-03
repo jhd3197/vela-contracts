@@ -1,0 +1,153 @@
+{
+  "surface": 1,
+  "id": "server-web-01",
+  "title": "web-01",
+  "subtitle": "Ubuntu 24.04 · x86_64",
+  "icon": "server",
+  "lang": "en",
+  "generatedAt": "2026-09-29T12:00:00Z",
+  "expiresAt": "2026-09-29T12:01:00Z",
+  "refresh": {
+    "every": 4
+  },
+  "actions": [
+    {
+      "id": "restart-service",
+      "title": "Restart service",
+      "confirm": "Restart this service?",
+      "danger": true
+    }
+  ],
+  "root": {
+    "type": "desktop",
+    "title": "web-01",
+    "wallpaper": "dusk",
+    "windows": [
+      {
+        "type": "window",
+        "id": "system",
+        "title": "System",
+        "icon": "monitor",
+        "children": [
+          {
+            "type": "keyvalue",
+            "rows": [
+              {
+                "label": "OS",
+                "value": "Ubuntu 24.04"
+              },
+              {
+                "label": "Cores",
+                "value": 8,
+                "format": "number"
+              }
+            ]
+          },
+          {
+            "type": "chart",
+            "kind": "line",
+            "label": "CPU",
+            "series": [
+              12,
+              18,
+              40,
+              22
+            ],
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ]
+      },
+      {
+        "type": "window",
+        "id": "services",
+        "title": "Services",
+        "icon": "boxes",
+        "size": "l",
+        "children": [
+          {
+            "type": "table",
+            "columns": [
+              {
+                "key": "name",
+                "label": "Service"
+              },
+              {
+                "key": "state",
+                "label": "State"
+              },
+              {
+                "key": "memory",
+                "label": "Memory",
+                "align": "end",
+                "format": "bytes"
+              }
+            ],
+            "rows": [
+              {
+                "name": "nginx",
+                "state": "running",
+                "memory": 52428800
+              },
+              {
+                "name": "postgres",
+                "state": "running",
+                "memory": null
+              }
+            ]
+          },
+          {
+            "type": "button",
+            "label": "Restart nginx",
+            "action": "restart-service",
+            "input": {
+              "service": "nginx"
+            },
+            "tone": "warn"
+          }
+        ]
+      },
+      {
+        "type": "window",
+        "id": "drives",
+        "title": "Drives",
+        "icon": "hard-drive",
+        "minimized": true,
+        "children": [
+          {
+            "type": "list",
+            "rows": [
+              {
+                "label": "/",
+                "detail": "61% used",
+                "progress": 61,
+                "tone": "neutral"
+              },
+              {
+                "label": "/data",
+                "detail": "93% used",
+                "progress": 93,
+                "tone": "bad"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "dock": [
+      {
+        "id": "nginx",
+        "label": "nginx",
+        "icon": "globe",
+        "window": "services"
+      },
+      {
+        "label": "postgres",
+        "badge": "3",
+        "tone": "warn"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "surface": 1,
+  "title": "x",
+  "root": {
+    "type": "stack",
+    "children": [
+      {
+        "value": "x"
+      }
+    ]
+  }
+}
